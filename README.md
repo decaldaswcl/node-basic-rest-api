@@ -1,10 +1,11 @@
 # BASIC REST API
 
-Basic API to query, change, delete product data using node.js with MySQL database
+Basic API to query, change, delete product data of marketplace using node.js with MySQL database.
 
 # Requeriments
 
 Node.js version 18 or above
+MySQL workbench 8.0 or above
 
 
 # How to install
@@ -29,9 +30,138 @@ ren environment_exemple .env
 Open the .env file and change the fields with the necessary.
 ```js
     PORT=//put the port that the server will run the application
+    DB_HOST=//database host
+    DB_PORT=//database port 
+    DB_USER=//database user 
+    DB_PASS=//password database
+    DB_NAME=//database name
 ```
-
-
 
 # How to run
 
+Run command 
+```sh
+    node index.js
+```
+
+##  Crate Request 
+
+
+Exemple Request
+Method HTTP: POST
+URL: <URL>/api/products
+Body
+```json
+    {		
+		"name": "Monitor 24 G520 ",
+		"description": "Monitor 120Hz 2xHDMI",
+		"partnumber": "582-FDRT",
+		"brand": "Sharp",
+		"type": "Monitor",
+		"price": 522.00
+	}   
+```
+
+Exemple Response
+```json
+    {
+	"fieldCount": 0,
+	"affectedRows": 1,
+	"insertId": 2,
+	"serverStatus": 2,
+	"warningCount": 0,
+	"message": "",
+	"protocol41": true,
+	"changedRows": 0
+    }	
+```
+##  Consult All Request 
+
+Exemple Request
+Method HTTP: GET
+URL: <URL>/api/products
+
+Exemple Response
+```json
+    
+	{
+		"id": 1,
+		"name": "Mouse Xtreme B200",
+		"description": "Mouse wireless black ",
+		"partnumber": "554-SDF",
+		"brand": "Logitech",
+		"type": "Mouse",
+		"price": 56.2
+	}
+
+```
+##  Find by Id Request 
+
+
+Exemple Request
+Method HTTP: GET
+URL: <URL>/api/products/<number id>
+
+Exemple Response
+```json
+    
+	{
+		"id": 6,
+		"name": "Mouse Xtreme B200",
+		"description": "Mouse wireless black ",
+		"partnumber": "554-SDF",
+		"brand": "Logitech",
+		"type": "Mouse",
+		"price": 56.2
+	}
+
+```
+##  Update Request 
+
+
+Exemple Request
+Method HTTP: PUT
+URL: <URL>/api/products/<number id>
+Body
+```json
+    {		
+		"name": "Hub USB-C",
+        "brand": "Lenovo",		
+	}   
+```
+
+Exemple Response
+```json
+    {
+	"fieldCount": 0,
+	"affectedRows": 1,
+	"insertId": 0,
+	"serverStatus": 2,
+	"warningCount": 0,
+	"message": "(Rows matched: 1  Changed: 1  Warnings: 0",
+	"protocol41": true,
+	"changedRows": 1
+}	
+```
+
+##  Delete Request 
+
+
+Exemple Request
+Method HTTP: DELETE
+URL: <URL>/api/products/<number id>
+
+
+Exemple Response
+```json
+    {
+	"fieldCount": 0,
+	"affectedRows": 1,
+	"insertId": 2,
+	"serverStatus": 2,
+	"warningCount": 0,
+	"message": "",
+	"protocol41": true,
+	"changedRows": 0
+    }	
+```

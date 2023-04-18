@@ -1,2 +1,7 @@
-NODE_ENV=enriromente name 
-PORT=porte server
+NODE_ENV=environment name 
+PORT=port server
+DB_HOST=database localhost
+DB_PORT=database port 
+DB_USER=database user 
+DB_PASS=password database
+DB_NAME=database name
