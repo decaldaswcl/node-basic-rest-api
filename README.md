@@ -2,13 +2,13 @@
 
 Basic API to query, change, delete product data of marketplace using node.js with MySQL database.
 
-# Requeriments
+## Requeriments
 
 Node.js version 18 or above
 MySQL workbench 8.0 or above
 
 
-# How to install
+## How to install
 
 1. Clone the repository:
 ```sh
@@ -37,19 +37,21 @@ Open the .env file and change the fields with the necessary.
     DB_NAME=//database name
 ```
 
-# How to run
+## How to run
 
 Run command 
 ```sh
     node index.js
 ```
 
+
 ##  Crate Request 
 
 
 Exemple Request
-Method HTTP: POST
-URL: <URL>/api/products
+```ssh
+HTTP POST http://localhost/api/products
+```
 Body
 ```json
     {		
@@ -75,15 +77,18 @@ Exemple Response
 	"changedRows": 0
     }	
 ```
+
+
 ##  Consult All Request 
 
+
 Exemple Request
-Method HTTP: GET
-URL: <URL>/api/products
+```ssh
+HTTP GET http://localhost/api/products
+```
 
 Exemple Response
-```json
-    
+```json    
 	{
 		"id": 1,
 		"name": "Mouse Xtreme B200",
@@ -93,18 +98,19 @@ Exemple Response
 		"type": "Mouse",
 		"price": 56.2
 	}
-
 ```
+
+
 ##  Find by Id Request 
 
 
 Exemple Request
-Method HTTP: GET
-URL: <URL>/api/products/<number id>
+```ssh
+HTTP GET http://localhost/api/products/6
+```
 
 Exemple Response
 ```json
-    
 	{
 		"id": 6,
 		"name": "Mouse Xtreme B200",
@@ -114,14 +120,16 @@ Exemple Response
 		"type": "Mouse",
 		"price": 56.2
 	}
-
 ```
+
+
 ##  Update Request 
 
 
 Exemple Request
-Method HTTP: PUT
-URL: <URL>/api/products/<number id>
+```ssh
+HTTP GET http://localhost/api/products/1
+```
 Body
 ```json
     {		
@@ -148,9 +156,9 @@ Exemple Response
 
 
 Exemple Request
-Method HTTP: DELETE
-URL: <URL>/api/products/<number id>
-
+```ssh
+HTTP DELETE http://localhost/api/products/6
+```
 
 Exemple Response
 ```json
