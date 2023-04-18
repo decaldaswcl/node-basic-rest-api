@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "Willian de Caldas Leite",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }

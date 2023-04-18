@@ -5,3 +5,4 @@ Basic API to query, change, delete product data using node.js with MySQL databas
 # Requeriments
 
 Node.js version 18 or above
+Express version 4 or above
