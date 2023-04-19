@@ -99,6 +99,10 @@ Exemple Response
 		"price": 56.2
 	}
 ```
+or empty
+```json
+	[]
+```
 
 
 ##  Find by Id Request 
@@ -106,21 +110,26 @@ Exemple Response
 
 Exemple Request
 ```ssh
-HTTP GET http://localhost/api/products/6
+HTTP GET http://localhost/api/products/1
 ```
 
-Exemple Response
+Exemple Sucess Response
 ```json
 	{
-		"id": 6,
-		"name": "Mouse Xtreme B200",
-		"description": "Mouse wireless black ",
+		"id": 1,
+		"name": "Mouse Fantoms",
+		"description": "Mouse wired gamer",
 		"partnumber": "554-SDF",
 		"brand": "Logitech",
 		"type": "Mouse",
 		"price": 56.2
 	}
 ```
+or empty
+```json
+	[]
+```
+
 
 
 ##  Update Request 
@@ -138,18 +147,32 @@ Body
 	}   
 ```
 
-Exemple Response
+Exemple Sucess Response
+200
 ```json
     {
-	"fieldCount": 0,
-	"affectedRows": 1,
-	"insertId": 0,
-	"serverStatus": 2,
-	"warningCount": 0,
-	"message": "(Rows matched: 1  Changed: 1  Warnings: 0",
-	"protocol41": true,
-	"changedRows": 1
-}	
+	"message": "id 1deleted successfully"
+    }  	
+```
+or
+```json
+    {
+	"message": "rows matched, but no have been changed"
+    }  
+
+```
+Exemple Error Response
+404
+```json
+    {
+	"errorMessage": "Unknown column 'nam' in 'field list'"
+    }  	
+```
+or 400
+```json
+    {
+	"errorMessage": "Error unknown"
+    }  	
 ```
 
 ##  Delete Request 
@@ -160,16 +183,20 @@ Exemple Request
 HTTP DELETE http://localhost/api/products/6
 ```
 
-Exemple Response
+ 
+Exemple Sucess Response
+200
 ```json
     {
-	"fieldCount": 0,
-	"affectedRows": 1,
-	"insertId": 2,
-	"serverStatus": 2,
-	"warningCount": 0,
-	"message": "",
-	"protocol41": true,
-	"changedRows": 0
-    }	
+	"message": "id 1 deleted successfully"
+    } 
 ```
+
+Exemple Error Response
+404
+```json
+    {
+	    "errorMessage": "id 5 not found"
+    }  	
+```
+
