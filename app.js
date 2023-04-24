@@ -1,7 +1,8 @@
 const express = require('express');
 const mysql = require('mysql');
-
 require('dotenv').config();
+
+const app = express();
 const connection = mysql.createConnection({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
@@ -12,7 +13,7 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-const app = express();
+
 //Enable read json in body
 app.use(express.json());
 
@@ -81,6 +82,4 @@ app.delete('/api/products/:id', (req, res) => {
     });
 });
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Server is running in port ${process.env.SERVER_PORT}`);
-});
+module.exports = app;
