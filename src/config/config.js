@@ -1,5 +1,4 @@
 const dotenv = require('dotenv');
 
-const result = dotenv.config();
+dotenv.config();
 
-module.exports = result;
