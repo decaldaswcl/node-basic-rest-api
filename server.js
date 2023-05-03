@@ -1,4 +1,4 @@
-require('./src/config/config.js');
+require('./config/config');
 const app = require('./app');
 
 

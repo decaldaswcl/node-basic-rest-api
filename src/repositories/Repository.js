@@ -1,4 +1,4 @@
-const consult = require('../database/connection.js');
+const consult = require('../database/products.js');
 
 class Repository {
     create(data){        

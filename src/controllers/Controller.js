@@ -1,4 +1,4 @@
-const result = require('../config/config.js');
+
 const Repository = require('../repositories/Repository.js')
 
 class Controller {
