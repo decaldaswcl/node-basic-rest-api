@@ -1,34 +1,34 @@
 
-const Repository = require('../repositories/Repository.js')
+import repositories from '../repositories/Repository.js';
 
 class Controller {
 
     async get(req, res){
         const id = req.params.id;
         if(id){
-            const result = await Repository.findById(id);
+            const result = await repositories.findById(id);
             res.json(result);
         }else{
-            const result = await Repository.findAll();
+            const result = await findAll();
             res.json(result);
         }                
     }
     async store(req, res){
         const data = req.body;
-        const result = await Repository.create(data);
+        const result = await repositories.create(data);
         res.json(result)        
     }
     async update(req, res){
         const id = req.params.id;
         const data = req.body;
-        const result = await Repository.update(data, id);
+        const result = await repositories.update(data, id);
         res.json(result);        
     }
     async delete(req, res){
         const id = req.params.id;
-        const result = await Repository.delete(id);
+        const result = await repositories.delete(id);
         res.json(result);
     }
 }
 
-module.exports = new Controller;
+export default new Controller;

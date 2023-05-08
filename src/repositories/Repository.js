@@ -1,4 +1,4 @@
-const consult = require('../database/products.js');
+import consult from '../entities/products.js';
 
 class Repository {
     create(data){        
@@ -25,4 +25,4 @@ class Repository {
     }
 }
 
-module.exports = new Repository;
+export default new Repository;
