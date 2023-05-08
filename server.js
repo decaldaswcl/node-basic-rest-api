@@ -1,5 +1,6 @@
-require('./config/config');
-const app = require('./src/app');
+import './config/config.js';
+import app from './src/app.js';
+
 
 
 app.listen(process.env.SERVER_PORT, () => {

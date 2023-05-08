@@ -1,6 +1,6 @@
-const mysql = require('mysql');
+import { createConnection } from 'mysql';
 
-const connection = mysql.createConnection({
+ const connection = createConnection({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
@@ -9,3 +9,5 @@ const connection = mysql.createConnection({
 });
 
 connection.connect();
+
+export default connection;
